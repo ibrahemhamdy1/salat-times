@@ -3,17 +3,11 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserTest extends TestCase
 {
-
-    /** @test */
-   public function create_new_user()
-   {
-      $this->assertDatabaseHas('users', $this->createUser()->toArray());
-   }
-
-
     /** @test */
     public function new_user_can_login()
     {
@@ -28,7 +22,6 @@ class UserTest extends TestCase
 
         $this->assertAuthenticatedAs($user);
     }
-
 
     /** @test */
     public function invalid_user_can_not_login()

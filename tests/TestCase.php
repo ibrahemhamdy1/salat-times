@@ -4,6 +4,8 @@ namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Artisan;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -32,6 +34,6 @@ abstract class TestCase extends BaseTestCase
             'password' => 'secret'
         ]);
 
-        return $user;
+        return auth()->user();
     }
 }
