@@ -2,10 +2,9 @@
 
 namespace Tests;
 
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use App\Masjid;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -35,5 +34,19 @@ abstract class TestCase extends BaseTestCase
         ]);
 
         return auth()->user();
+    }
+
+    /**
+     * Create new masjid
+     *
+     * @param  \App\User  $user
+     *
+     * @return \App\Masjid
+     */
+    public function createMasjid()
+    {
+        $masjid = factory(Masjid::class)->create();
+
+        return $masjid;
     }
 }
