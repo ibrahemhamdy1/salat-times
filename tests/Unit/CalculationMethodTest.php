@@ -12,7 +12,6 @@ class CalculationMethodTest extends TestCase
     /** @test */
     public function seeding_the_database(Type $var = null)
     {
-        Artisan::call('db:seed', ['--class' => 'CalculationMethodsTableSeeder']);
         $methods = collect([
             [
                 'name' => 'Muslim World League',
