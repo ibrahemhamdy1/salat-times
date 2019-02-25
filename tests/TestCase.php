@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\User;
 use App\Masjid;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
@@ -44,9 +45,11 @@ abstract class TestCase extends BaseTestCase
      *
      * @return \App\Masjid
      */
-    public function createMasjid()
+    public function createMasjid(User $user)
     {
-        $masjid = factory(Masjid::class)->create();
+        $masjid = factory(Masjid::class)->create([
+            'user_id' => $user->id
+        ]);
 
         return $masjid;
     }

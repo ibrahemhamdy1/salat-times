@@ -10,9 +10,9 @@ class IqamaTest extends TestCase
     /** @test */
     public function create_new_masjid_iqama()
     {
-        $this->createUser();
+        $user = $this->createUser();
 
-        $this->createMasjid();
+        $this->createMasjid($user);
 
         $iqama = factory(Iqama::class)->create();
 
@@ -22,11 +22,12 @@ class IqamaTest extends TestCase
     /** @test */
     public function iqama_has_masjid()
     {
-        $this->createUser();
+        $user = $this->createUser();
+        $masjid = $this->createMasjid($user);
 
-        $masjid = $this->createMasjid();
-
-        $iqama = factory(Iqama::class)->create();
+        $iqama = factory(Iqama::class)->create([
+            'masjid_id' => $masjid->id,
+        ]);
 
         $this->assertEquals($iqama->masjid()->get(), $masjid->get());
     }

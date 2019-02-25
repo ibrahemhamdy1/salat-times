@@ -1,7 +1,6 @@
 <?php
 
 use App\Iqama;
-use App\Masjid;
 use Faker\Generator as Faker;
 
 $factory->define(Iqama::class, function (Faker $faker) {
@@ -13,6 +12,5 @@ $factory->define(Iqama::class, function (Faker $faker) {
         'asr' => $faker->time,
         'magrib' => $faker->time,
         'isha' => $faker->time,
-        'masjid_id' => Masjid::first()->id,
     ];
 });

@@ -9,8 +9,8 @@ class MasjidTest extends TestCase
     /** @test */
     public function create_masjid()
     {
-        $this->createUser();
-        $masjid = $this->createMasjid();
+        $user = $this->createUser();
+        $masjid = $this->createMasjid($user);
 
         $masjid->unsetRelation('user');
 
@@ -21,7 +21,7 @@ class MasjidTest extends TestCase
     public function masjid_has_a_user()
     {
         $user = $this->createUser();
-        $masjid = $this->createMasjid();
+        $masjid = $this->createMasjid($user);
 
         $masjid->unsetRelation('user');
 
