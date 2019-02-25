@@ -17,14 +17,14 @@ class MasjidTest extends TestCase
         $this->assertDatabaseHas('masjids', $masjid->toArray());
     }
 
-      /** @test */
-      public function masjid_has_a_user()
-      {
+    /** @test */
+    public function masjid_has_a_user()
+    {
         $user = $this->createUser();
         $masjid = $this->createMasjid();
 
         $masjid->unsetRelation('user');
 
         $this->assertEquals($masjid->user()->get(), $user->get());
-      }
+    }
 }

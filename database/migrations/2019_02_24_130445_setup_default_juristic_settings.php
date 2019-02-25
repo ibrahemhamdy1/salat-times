@@ -19,17 +19,17 @@ class SetupDefaultJuristicSettings extends Migration
         $juristicSettings = [
             [
                 'name' => 'Standard (Hanbali, Maliki, Shafi)',
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ],
             [
                 'name' => 'Hanafi',
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ]
         ];
 
-        DB::transaction(function () use ($juristicSettings){
+        DB::transaction(function () use ($juristicSettings) {
             DB::table('juristic_settings')->insert($juristicSettings);
         }, 5);
     }

@@ -15,7 +15,8 @@ abstract class TestCase extends BaseTestCase
      *
      * @return \App\User;
      */
-    public function createUser(){
+    public function createUser()
+    {
         return factory('App\User')->create();
     }
 

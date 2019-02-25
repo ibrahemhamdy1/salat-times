@@ -23,8 +23,8 @@ class SetupDefaultCalculationMethods extends Migration
                 'isha_angle' => '17',
                 'dhuhr_time_after_zawal' => 1,
                 'maghrib_time_after_sunset' => 1,
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ],
             [
                 'name' => 'Egyptian General Authority of Survey (Default)',
@@ -32,8 +32,8 @@ class SetupDefaultCalculationMethods extends Migration
                 'isha_angle' => '17.5',
                 'dhuhr_time_after_zawal' => 1,
                 'maghrib_time_after_sunset' => 1,
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ],
             [
                 'name' => 'University Of Islamic Sciences, Karachi',
@@ -41,8 +41,8 @@ class SetupDefaultCalculationMethods extends Migration
                 'isha_angle' => '18',
                 'dhuhr_time_after_zawal' => 1,
                 'maghrib_time_after_sunset' => 1,
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ],
             [
                 'name' => 'Umm Al-Qura',
@@ -50,8 +50,8 @@ class SetupDefaultCalculationMethods extends Migration
                 'isha_angle' => '19',
                 'dhuhr_time_after_zawal' => 1,
                 'maghrib_time_after_sunset' => 1,
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ],
             [
                 'name' => 'Islamic Society of North America',
@@ -59,8 +59,8 @@ class SetupDefaultCalculationMethods extends Migration
                 'isha_angle' => '15',
                 'dhuhr_time_after_zawal' => 1,
                 'maghrib_time_after_sunset' => 1,
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ],
             [
                 'name' => 'Union des Organisations Islamiques de France',
@@ -68,8 +68,8 @@ class SetupDefaultCalculationMethods extends Migration
                 'isha_angle' => '12',
                 'dhuhr_time_after_zawal' => 1,
                 'maghrib_time_after_sunset' => 1,
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ],
             [
                 'name' => 'Majlis Ugama Islam Singapura',
@@ -77,8 +77,8 @@ class SetupDefaultCalculationMethods extends Migration
                 'isha_angle' => '18',
                 'dhuhr_time_after_zawal' => 1,
                 'maghrib_time_after_sunset' => 1,
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ],
             [
                 'name' => 'Fajr Angle and Isha time adjustment',
@@ -86,12 +86,12 @@ class SetupDefaultCalculationMethods extends Migration
                 'isha_angle' => '30',
                 'dhuhr_time_after_zawal' => 1,
                 'maghrib_time_after_sunset' => 1,
-                "created_at" => $nowDataAndTime,
-                "updated_at" => $nowDataAndTime,
+                'created_at' => $nowDataAndTime,
+                'updated_at' => $nowDataAndTime,
             ],
         ];
 
-        DB::transaction(function () use ($methods){
+        DB::transaction(function () use ($methods) {
             DB::table('calculation_methods')->insert($methods);
         }, 5);
     }

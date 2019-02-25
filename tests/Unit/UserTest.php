@@ -11,6 +11,6 @@ class UserTest extends TestCase
     {
         $user = $this->createUser();
 
-       $this->assertDatabaseHas('users', $user->toArray());
+        $this->assertDatabaseHas('users', $user->toArray());
     }
 }

@@ -3,17 +3,15 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserTest extends TestCase
 {
     /** @test */
     public function new_user_can_login()
     {
-       $user = $this->createUser();
+        $user = $this->createUser();
 
-       $response = $this->post('/login', [
+        $response = $this->post('/login', [
             'email' => $user->email,
             'password' => 'secret',
         ]);
