@@ -1,6 +1,7 @@
 <?php
 
 use App\Masjid;
+use App\IqamaType;
 use Faker\Generator as Faker;
 
 $factory->define(Masjid::class, function (Faker $faker) {
@@ -10,6 +11,6 @@ $factory->define(Masjid::class, function (Faker $faker) {
         'lat' => $faker->latitude(),
         'lng' => $faker->longitude(),
         'hajji_date_adjustment' => 0,
-        'iqama_type' => 'Calculated',
+        'iqama_type' => IqamaType::first()->id,
     ];
 });

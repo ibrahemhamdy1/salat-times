@@ -22,7 +22,9 @@ class CreateMasjidsTable extends Migration
             $table->string('lat');
             $table->string('lng');
             $table->tinyInteger('hajji_date_adjustment')->default(0);
-            $table->enum('iqama_type', ['Calculated', 'Manual']);
+
+            $table->integer('iqama_type')->unsigned()->nullable();
+            $table->foreign('iqama_type')->references('id')->on('iqama_types');
 
             $table->integer('calculation_method_id')->unsigned()->nullable();
             $table->foreign('calculation_method_id')->references('id')->on('calculation_methods');
