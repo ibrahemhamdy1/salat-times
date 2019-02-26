@@ -18,21 +18,29 @@ class CreateMasjidsTable extends Migration
             $table->timestamps();
 
             $table->string('name');
-            $table->string('address');
-            $table->string('lat');
-            $table->string('lng');
+            $table->string('phone')->nullable();
+            $table->string('phone_ext')->nullable();
+            $table->string('address_1')->nullable();
+            $table->string('address_2')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('zip_code')->nullable();
+
+            $table->decimal('lat', 10, 8);
+            $table->decimal('lng', 11, 8);
+
             $table->tinyInteger('hajji_date_adjustment')->default(0);
 
-            $table->integer('iqama_type')->unsigned()->nullable();
-            $table->foreign('iqama_type')->references('id')->on('iqama_types');
+            $table->integer('country_id')->unsigned();
+            $table->foreign('country_id')->references('id')->on('countries');
 
-            $table->integer('calculation_method_id')->unsigned()->nullable();
+            $table->integer('calculation_method_id')->unsigned();
             $table->foreign('calculation_method_id')->references('id')->on('calculation_methods');
 
-            $table->integer('juristic_setting_id')->unsigned()->nullable();
+            $table->integer('juristic_setting_id')->unsigned();
             $table->foreign('juristic_setting_id')->references('id')->on('juristic_settings');
 
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

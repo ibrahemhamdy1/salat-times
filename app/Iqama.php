@@ -30,4 +30,14 @@ class Iqama extends Model
     {
         return $this->belongsTo(Masjid::class);
     }
+
+    /**
+     * The iqama type that this iqama has.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function iqamaType()
+    {
+        return $this->belongsTo(IqamaType::class);
+    }
 }

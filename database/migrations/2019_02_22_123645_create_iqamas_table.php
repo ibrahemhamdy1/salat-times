@@ -25,8 +25,11 @@ class CreateIqamasTable extends Migration
             $table->string('magrib');
             $table->string('isha');
 
-            $table->integer('masjid_id')->unsigned()->nullable();
+            $table->integer('masjid_id')->unsigned();
             $table->foreign('masjid_id')->references('id')->on('masjids');
+
+            $table->integer('iqama_type_id')->unsigned();
+            $table->foreign('iqama_type_id')->references('id')->on('iqama_types');
         });
     }
 
