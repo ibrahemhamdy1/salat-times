@@ -39,9 +39,6 @@ class CreateMasjidsTable extends Migration
 
             $table->integer('juristic_setting_id')->unsigned();
             $table->foreign('juristic_setting_id')->references('id')->on('juristic_settings');
-
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

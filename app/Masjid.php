@@ -13,9 +13,19 @@ class Masjid extends Model
      */
     protected $fillable = [
         'name',
-        'address',
+        'phone',
+        'phone_ext',
+        'address_1',
+        'address_2',
+        'city',
+        'state',
+        'zip_code',
         'lat',
         'lng',
+        'country_id',
+        'hajji_date_adjustment',
+        'calculation_method_id',
+        'juristic_setting_id',
     ];
 
     /**
@@ -63,8 +73,8 @@ class Masjid extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
     }
 }
