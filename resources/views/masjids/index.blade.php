@@ -6,7 +6,9 @@
            <div class="card">
                 <div class="card-header d-flex align-items-center">
                     <h5 class="mb-0">Masjids</h5>
-                    <a href="{{ route('masjids.create') }}" class="btn btn-primary btn-sm ml-2">Create</a>
+                    <div class="ml-auto">
+                        <a href="{{ route('masjids.create') }}" class="btn btn-primary btn-sm ml-2">Create</a>
+                    </div>
                 </div>
                <div class="card-body">
                    <table class="table table-striped">
