@@ -26,8 +26,8 @@ class CreateMasjidsTable extends Migration
             $table->string('state')->nullable();
             $table->string('zip_code')->nullable();
 
-            $table->decimal('lat', 10, 8);
-            $table->decimal('lng', 11, 8);
+            $table->decimal('lat', 10, 6);
+            $table->decimal('lng', 11, 6);
 
             $table->tinyInteger('hajji_date_adjustment')->default(0);
 
