@@ -13,11 +13,9 @@ class IqamaTest extends TestCase
     {
         $user = $this->createUser();
         $masjid = $this->createMasjid($user);
-        $iqamaType = IqamaType::first();
 
         $iqama = factory(Iqama::class)->create([
             'masjid_id' => $masjid->id,
-            'iqama_type_id' => $iqamaType->id
         ]);
 
         $this->assertDatabaseHas('iqamas', $iqama->toArray());
@@ -28,27 +26,11 @@ class IqamaTest extends TestCase
     {
         $user = $this->createUser();
         $masjid = $this->createMasjid($user);
-        $iqamaType = IqamaType::first();
 
         $iqama = factory(Iqama::class)->create([
             'masjid_id' => $masjid->id,
-            'iqama_type_id' => $iqamaType->id
         ]);
 
         $this->assertEquals($iqama->masjid()->get(), $masjid->get());
-    }
-
-    /** @test */
-    public function iqama_has_iqama_type()
-    {
-        $user = $this->createUser();
-        $masjid = $this->createMasjid($user);
-        $iqamaType = IqamaType::first();
-        $iqama = factory(Iqama::class)->create([
-            'masjid_id' => $masjid->id,
-            'iqama_type_id' => $iqamaType->id
-        ]);
-
-        $this->assertEquals($masjid->iqama()->first()->iqamaType()->first(), $iqamaType);
     }
 }
