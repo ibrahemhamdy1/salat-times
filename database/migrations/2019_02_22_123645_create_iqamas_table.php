@@ -17,8 +17,7 @@ class CreateIqamasTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-            $table->date('from_date');
-            $table->date('to_date');
+            $table->date('day_date');
             $table->string('fajr');
             $table->string('duhr');
             $table->string('asr');

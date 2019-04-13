@@ -12,8 +12,7 @@ class Iqama extends Model
      * @var array
      */
     protected $fillable = [
-        'from_date',
-        'to_date',
+        'day_date',
         'fajr',
         'duhr',
         'asr',
@@ -29,15 +28,5 @@ class Iqama extends Model
     public function masjid()
     {
         return $this->belongsTo(Masjid::class);
-    }
-
-    /**
-     * The iqama type that this iqama has.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function iqamaType()
-    {
-        return $this->belongsTo(IqamaType::class);
     }
 }
