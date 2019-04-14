@@ -20,4 +20,5 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/masjids', 'MasjidsController')->except('show');
+    Route::resource('/masjids/{masjid}/iqamas', 'Iqamas\IqamasController')->except('show');
 });
