@@ -53,9 +53,9 @@ class Masjid extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function iqama()
+    public function iqamas()
     {
-        return $this->hasOne(Iqama::class);
+        return $this->hasMany(Iqama::class);
     }
 
     /**
