@@ -12,7 +12,7 @@ class Iqama extends Model
      * @var array
      */
     protected $fillable = [
-        'day_date',
+        'date',
         'fajr',
         'duhr',
         'asr',
