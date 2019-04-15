@@ -13,24 +13,12 @@ class EditViewModel extends ViewModel
     use HasCountries, HasCalculationMethods, HasJuristicSettings;
 
     /**
-     * The masjid.
-     *
      * @var \App\Masjid
      */
-    protected $masjid;
+    public $masjid;
 
     public function __construct(Masjid $masjid)
     {
         $this->masjid = $masjid;
-    }
-
-    /**
-     * Get the masjid
-     *
-     * @return \App\Masjid
-     */
-    public function masjid()
-    {
-        return $this->masjid;
     }
 }
