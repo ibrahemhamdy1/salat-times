@@ -8,11 +8,9 @@ use Illuminate\Database\Eloquent\Collection;
 class IndexViewModel extends ViewModel
 {
     /**
-     * The masjids.
-     *
      * @var \Illuminate\Database\Eloquent\Collection
      */
-    protected $masjids;
+    public $masjids;
 
     /**
      * Setup the view model.
@@ -24,15 +22,5 @@ class IndexViewModel extends ViewModel
     public function __construct(Collection $masjids)
     {
         $this->masjids = $masjids;
-    }
-
-    /**
-     * The masjids.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function masjids()
-    {
-        return $this->masjids;
     }
 }
