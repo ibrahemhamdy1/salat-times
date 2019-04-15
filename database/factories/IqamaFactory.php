@@ -3,7 +3,7 @@
 use App\Iqama;
 use Faker\Generator as Faker;
 
-$factory->define(Iqama::class, function (Faker $faker) {
+$factory->define(Iqama::class, function (Faker $faker, $attributes) {
     return [
         'date' => $faker->date,
         'fajr' => $faker->time,
@@ -11,6 +11,5 @@ $factory->define(Iqama::class, function (Faker $faker) {
         'asr' => $faker->time,
         'magrib' => $faker->time,
         'isha' => $faker->time,
-        'masjid_id' => 1,
     ];
 });
