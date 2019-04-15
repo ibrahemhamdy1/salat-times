@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::resource('/masjids', 'MasjidsController')->except('show');
-    Route::resource('/masjids/{masjid}/iqamas', 'Iqamas\IqamasController')->except('show');
+    Route::resource('masjids', 'MasjidsController')->except('show');
+    Route::get('/masjids/{masjid}/iqamas/{year}/{month}', 'Iqamas\IqamasController@edit')->name('masjids.iqamas.month.edit');
+    Route::put('/masjids/{masjid}/iqamas/{year}/{month}', 'Iqamas\IqamasController@update')->name('masjids.iqamas.month.update');
 });
