@@ -1,5 +1,7 @@
 
 window._ = require('lodash');
+window.moment = require('moment');
+
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -10,6 +12,7 @@ window._ = require('lodash');
 try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
+    require('tempusdominus-bootstrap-4');
 
     require('bootstrap');
 } catch (e) {}

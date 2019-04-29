@@ -17,6 +17,8 @@ class MasjidsController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param  \Illuminate\Contracts\Auth\Authenticatable  $authUser
+     *
      * @return \Illuminate\Http\Response
      */
     public function index(LoggedInUser $authUser)
@@ -57,7 +59,7 @@ class MasjidsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $masjid
+     * @param  integer  $masjid
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $authUser
      *
      * @return \Illuminate\Http\Response
@@ -73,7 +75,7 @@ class MasjidsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\Masjids\Update  $request
-     * @param  int  $masjid
+     * @param  integer  $masjid
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $authUser
      *
      * @return \Illuminate\Http\RedirectResponse
@@ -92,7 +94,7 @@ class MasjidsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Http\Requests\Masjids\Destroy  $request
-     * @param  int  $masjid
+     * @param  integer  $masjid
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $authUser
      *
      * @return \Illuminate\Http\RedirectResponse

@@ -14,11 +14,25 @@ class Iqama extends Model
     protected $fillable = [
         'date',
         'fajr',
-        'duhr',
+        'dhuher',
         'asr',
         'magrib',
         'isha',
     ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'id',
+        'created_at',
+        'updated_at',
+        'date',
+        'masjid_id',
+    ];
+
 
     /**
      * The user that this masjid belongs to.

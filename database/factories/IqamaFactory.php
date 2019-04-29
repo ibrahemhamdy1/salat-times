@@ -7,7 +7,7 @@ $factory->define(Iqama::class, function (Faker $faker, $attributes) {
     return [
         'date' => $faker->dateTimeBetween('-10 years', 'now')->format("Y-m-d"),
         'fajr' => $faker->time,
-        'duhr' => $faker->time,
+        'dhuher' => $faker->time,
         'asr' => $faker->time,
         'magrib' => $faker->time,
         'isha' => $faker->time,

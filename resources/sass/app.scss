@@ -12,3 +12,18 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.iqama-hint {
+  position: absolute;
+  left: 48px;
+  font-size: 0.1rem;
+  color: #b3b3b3;
+  top: 9px;
+  z-index: 99999;
+  margin-top: -8px;
+}
+
+.convert-iqama-input-type {
+  cursor: pointer;
+}
+

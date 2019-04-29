@@ -18,11 +18,11 @@ class CreateIqamasTable extends Migration
             $table->timestamps();
 
             $table->date('date');
-            $table->string('fajr');
-            $table->string('duhr');
-            $table->string('asr');
-            $table->string('magrib');
-            $table->string('isha');
+            $table->string('fajr')->nullable();
+            $table->string('dhuher')->nullable();
+            $table->string('asr')->nullable();
+            $table->string('magrib')->nullable();
+            $table->string('isha')->nullable();
 
             $table->integer('masjid_id')->unsigned();
             $table->foreign('masjid_id')->references('id')->on('masjids');
