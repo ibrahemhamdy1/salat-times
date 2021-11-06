@@ -1,5 +1,5 @@
 # Salat Times App
-The app  is about geting the masjids iqmaas times
+The app is about getting the masjids iqmaas times
 
 ## How To run this project
     1- Git clone https://github.com/ibrahemhamdy1/salat-times.git
